@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under the Sea Word Guess Game</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body class="d-flex flex-column">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <br>
+            </div>
+        </div>
+        <!-- Main Game Container with Current Word -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1>Under the Sea Word Guess Game</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>Press "Spacebar" to begin game!</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 id="wordGuess">_ _ _ _ _</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <h4>Number of Guesses Left:
+                        <span id="guesses"></span>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <!-- Letters Guessed Wrong -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3>Wrong Letters:
+                        <span id="lettersGuessed"></span>
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <!-- Scorboard Container -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h3>Wins:
+                        <span id="wins"></span>
+                    </h3>
+                </div>
+                <div class="col-sm-6">
+                    <h3>Losses:
+                        <span id="loss"></span>
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<script src="assets/javascript/game.js"></script>
+</body>
+</html>

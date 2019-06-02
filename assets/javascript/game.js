@@ -8,8 +8,13 @@ let blanks = 0;
 let blanksCorrect = [];
 let wrongGuess =[];
 
+// Create Scorboard variables
+let wins = 0;
+let losses = 0;
+let remainingGuesses = 10;
+
 // Create game start funtion 
-function gameStart () {
+function gameStart() {
     // Choose random word from word bank
     randomWord = wordBank[Math.floor(Math.random() * wordBank.length)];
 
@@ -26,4 +31,12 @@ function gameStart () {
 
     // Get the blanks to push through to the html document 
     document.getElementById("wordGuess").innerHTML = "  " + blanksCorrect.join("  ")
+}
+
+// Create Game Reset Function
+function gameReset() {
+    remainingGuesses= 10;
+    wrongGuess = [];
+    blanksCorrect = [];
+    gameStart()
 }

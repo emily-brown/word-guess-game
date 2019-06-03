@@ -15,6 +15,7 @@ let remainingGuesses = 10;
 
 // Create game start funtion 
 function gameStart() {
+    
     // Choose random word from word bank
     randomWord = wordBank[Math.floor(Math.random() * wordBank.length)];
 
@@ -25,69 +26,89 @@ function gameStart() {
     blanks = wordLetters.length;
 
     // Push each letter from the newly created random word split array by using a loop to push the underscore blank spot
-    for (let i = 0; i < blanks; i++){
+    for (let i = 0; i < blanks; i++) {
         blanksCorrect.push("_");
     }
 
     // Get the blanks to push through to the html document 
-    document.getElementById("wordGuess").innerHTML = "  " + blanksCorrect.join("  ")
+    document.getElementById("wordGuess").innerHTML = "  " + blanksCorrect.join("  ");
+
+    console.log("randomWord");
+    console.log("wordLetters");
+    console.log("blanks");
+    console.log("blanksCorrect");
+    console.log("wrongGuess");
 }
+
 
 // Create Game Reset Function
 function gameReset() {
     remainingGuesses= 10;
     wrongGuess = [];
     blanksCorrect = [];
-    gameStart()
+    gameStart();
 }
 
 // Create comparison for letters entered by player against the actual word generated from wordbank 
 
 // Create comparison function 
-function compareLetters(letter) {
+function compareLetters(guessLetter) {
     let letterOfWord = false;
     for (let i = 0; i < blanks; i++) {
-        if (randomWord[i] == letter) {
+        if (randomWord[i] == guessLetter) {
             letterOfWord = true;
         }
     }
 
-    if (letterOfWord){
+    if (letterOfWord) {
         for (var i = 0; i < blanks; i++) {
-            if (randomWord[i] == letter) {
-                blanksCorrect[i] = letter;
+            if (randomWord[i] == guessLetter) {
+                blanksCorrect[i] = guessLetter;
             }
         }
     }
 
-    else{
-        wrongGuess.push(letter);
+    else {
+        wrongGuess.push(guessLetter);
         remainingGuesses--;
 
     }
+
+    console.log(blanksCorrect);
 }
 
 // Create function for the scoreboard - checking/comparing wins against losses 
 function scoreboard() {
-    if (wordLetters.toString() == blanksCorrect.toString()){
+    if (wordLetters.toString() == blanksCorrect.toString()) {
         wins++;
         gameReset()
-        document.getElementById("wins").innerHTML = " " + wins;
+        document.getElementById("trackwins").innerHTML = "  " + wins;
     }
     
     else if (remainingGuesses === 0) {
         losses++;
         gameReset()
-        document.getElementById("loss").innerHTML = " " + losses;
+        document.getElementById("tracklosses").innerHTML = "  " + losses;
     }
+
+    document.getElementById("wordGuess").innerHTML = "  " + blanksCorrect.join("  ");
+    document.getElementById("guesses").innerHTML = "  " + remainingGuesses;
+
+    console.log("wins:" + wins + " | losses:" + losses + "| Letters Guessed:" + remainingGuesses)
 }
+
+// Creat function so that when player hits spacebar, game begins
+// document.body.onkeyup = function(e) {
+//     if (e.which === 32)
+// }
 
 // Create event to check and store player letter guess 
 document.onkeyup = function (event) {
-    let guess = String.fromCharCode(event.keyCode).toLowerCase();
+    let guesses = String.fromCharCode(event.keyCode).toLowerCase();
     compareLetters(guesses);
     scoreboard();
-    document.getElementById("lettersGuessed").innerHTML = " " + wrongGuess.join(" ");
+    document.getElementById("lettersGuessed").innerHTML = "  " + wrongGuess.join("  ");
+    console.log(guesses);
 }
 
 // Start Game

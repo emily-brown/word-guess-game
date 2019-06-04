@@ -1,0 +1,25 @@
+#background {
+    background-image: url("../images/16922.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#game-content {
+    background-color: white;
+    opacity: 0.7;
+    font-family: 'Ribeye', cursive;
+}
+
+#guessBoard {
+    background-color: white;
+    opacity: 0.5;
+    font-family: 'Ribeye', cursive;
+}
+
+#scoreboard {
+    background-color: aquamarine;
+    opacity: 0.5;
+    font-family: 'Ribeye', cursive;
+}

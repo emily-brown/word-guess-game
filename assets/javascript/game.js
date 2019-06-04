@@ -1,31 +1,35 @@
-// Word Bank
+// Create Word Bank
 let wordBank = ["octopus", "mermaid", "seahorse", "whale", "shark"]
-
-// Create the empty variables
-let randomWord = "";
-let wordLetters = [];
-let blanks = 0;
-let blanksCorrect = [];
-let wrongGuess =[];
 
 // Create Scorboard variables
 let wins = 0;
 let losses = 0;
 let remainingGuesses = 10;
 
+// Create the empty variables
+let randomWord = "";
+let wordLetters = [];
+let blanks = 0;
+let blanksCorrect = [];
+let wrongGuess = [];
+
+// Get hint variables
+let helpMe = document.getElementById("hint");
+let answer = document.getElementById("showHint");
+
 // Create game start funtion 
 function gameStart() {
     
-    // Choose random word from word bank
+    // Automatically choose random word from word bank
     randomWord = wordBank[Math.floor(Math.random() * wordBank.length)];
 
-    // Split letters of word up for player to guess each letter in new array
+    // Split letters of word up for player to guess each letter in word
     wordLetters = randomWord.split("");
 
     // Break the length of the word up into the blanks 
     blanks = wordLetters.length;
 
-    // Push each letter from the newly created random word split array by using a loop to push the underscore blank spot
+    // Push each letter from the newly created random word split array by using a loop to push the underscore blank spot to match length of word 
     for (let i = 0; i < blanks; i++) {
         blanksCorrect.push("_");
     }
@@ -39,6 +43,43 @@ function gameStart() {
     console.log("blanksCorrect");
     console.log("wrongGuess");
 }
+
+gameStart()
+
+// Create hint funtion 
+
+helpMe.addEventListener("click", function(){
+
+    let hintBank = ["Sea animal with 8 arms", "Mythical half human sea creature", "This creature's scientifc name is Hippocampus", "Mammals of the sea", "These creatures have an entire week dedicated to them"];
+
+    // helpMe = hintBank;
+
+    if (randomWord === [0]) {
+        showHint.innerHTML = "Hint: " + hintBank[0];
+    }
+
+    else if (wordBank === [1]) {
+        hintBank === [1];
+    }
+
+    else if (wordBank === [2]) {
+        hintBank === [2];
+    }
+
+    else if (wordBank === [3]) {
+        hintBank === [3];
+    }
+
+    else if (wordBank === [4]) {
+        hintBank === [4];
+    }
+
+    showHint.innerHTML = "Hint: " + hintBank;
+
+// create html elelment,
+// add text to html element, append element to showHint
+    console.log("showHint");
+});
 
 
 // Create Game Reset Function
@@ -77,11 +118,18 @@ function compareLetters(guessLetter) {
     console.log(blanksCorrect);
 }
 
+// // Create audio function for winning 
+
+// function cheering() {
+    
+// }
+
 // Create function for the scoreboard - checking/comparing wins against losses 
 function scoreboard() {
     if (wordLetters.toString() == blanksCorrect.toString()) {
         wins++;
         gameReset()
+        cheering()
         document.getElementById("trackwins").innerHTML = "  " + wins;
     }
     
@@ -97,11 +145,6 @@ function scoreboard() {
     console.log("wins:" + wins + " | losses:" + losses + "| Letters Guessed:" + remainingGuesses)
 }
 
-// Creat function so that when player hits spacebar, game begins
-// document.body.onkeyup = function(e) {
-//     if (e.which === 32)
-// }
-
 // Create event to check and store player letter guess 
 document.onkeyup = function (event) {
     let guesses = String.fromCharCode(event.keyCode).toLowerCase();
@@ -110,6 +153,3 @@ document.onkeyup = function (event) {
     document.getElementById("lettersGuessed").innerHTML = "  " + wrongGuess.join("  ");
     console.log(guesses);
 }
-
-// Start Game
-gameStart();

@@ -7,64 +7,69 @@
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Ribeye&display=swap" rel="stylesheet">
 </head>
 
-<body class="d-flex flex-column">
+<body class="d-flex flex-column" id="background">
 
     <nav class="navbar fixed-top navbar-light bg-light">
-        <a class="navbar-brand" href="#">Fixed top</a>
+        <a class="navbar-brand" href="#">Back to Portfolio</a>
     </nav>
 
     <div class="row">
         <div class="col-sm-12">
             <br>
             <br>
+            <br>
+            <br>
         </div>
     </div>
 
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12">
-                <br>
-            </div>
-        </div>
         <!-- Main Game Container with Current Word -->
-        <div class="container">
+        <div class="container" id="game-content">
             <div class="row">
                 <div class="col-sm-12">
-                    <h1>Under the Sea Word Guess Game</h1>
+                    <h1 class="text-center">Under the Sea Word Guess Game</h1>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <h2>Press "Spacebar" to begin game!</h2>
+                    <h2 class="text-center">Press "Spacebar" to begin game!</h2>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <h3 id="wordGuess">_ _ _ _ _</h3>
+                    <h1 class="text-center" id="wordGuess"></h1></h1>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <h4>Number of Guesses Left:
-                        <span id="guesses"></span>
-                    </h4>
+                    <button id="hint">Help!</button>
+                    <h4 id="showHint">Hint:</h4>
                 </div>
             </div>
         </div>
-        <!-- Letters Guessed Wrong -->
-        <div class="container">
+        <!-- Letters Guessed Wrong & Number of Guess Left -->
+        <div class="container" id="guessBoard">
             <div class="row">
-                <div class="col-sm-12">
+                <div class="col-sm-6">
                     <h3>Wrong Letters:
                         <span id="lettersGuessed"></span>
                     </h3>
                 </div>
+                <div class="col-sm-6">
+                    <h3>Number of Guesses Left:
+                        <span id="guesses"></span>
+                    </h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12"></div>
             </div>
         </div>
         <!-- Scorboard Container -->
-        <div class="container">
+        <div class="container" id="scoreboard">
             <div class="row">
                 <div class="col-sm-6">
                     <h3>Wins:
@@ -79,6 +84,10 @@
             </div>
         </div>
     </div>
+
+    <!-- <audio>
+        <source id="cheers" src="assets/audio/sound_ex_machina_Light+Applause,+Cheer.mp3" type="audio/mp3">
+    </audio> -->
 
 
 

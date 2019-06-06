@@ -36,7 +36,7 @@ function gameStart() {
 
     // Get the blanks to push through to the html document 
     document.getElementById("wordGuess").innerHTML = "  " + blanksCorrect.join("  ");
-
+    
     console.log("randomWord");
     console.log("wordLetters");
     console.log("blanks");
@@ -44,49 +44,26 @@ function gameStart() {
     console.log("wrongGuess");
 }
 
-gameStart()
-
 // Create hint funtion 
 
 helpMe.addEventListener("click", function(){
 
+    // Create hint bank
     let hintBank = ["Sea animal with 8 arms", "Mythical half human sea creature", "This creature's scientifc name is Hippocampus", "Mammals of the sea", "These creatures have an entire week dedicated to them"];
 
-    // helpMe = hintBank;
+    // Match the correct hint with the corresponding random word
+    showHint.innerHTML = "Hint: " + hintBank[wordBank.indexOf(randomWord)];
 
-    if (randomWord === [0]) {
-        showHint.innerHTML = "Hint: " + hintBank[0];
-    }
-
-    else if (wordBank === [1]) {
-        hintBank === [1];
-    }
-
-    else if (wordBank === [2]) {
-        hintBank === [2];
-    }
-
-    else if (wordBank === [3]) {
-        hintBank === [3];
-    }
-
-    else if (wordBank === [4]) {
-        hintBank === [4];
-    }
-
-    showHint.innerHTML = "Hint: " + hintBank;
-
-// create html elelment,
-// add text to html element, append element to showHint
     console.log("showHint");
 });
 
 
 // Create Game Reset Function
 function gameReset() {
-    remainingGuesses= 10;
+    remainingGuesses = 10;
     wrongGuess = [];
     blanksCorrect = [];
+    document.getElementById("showHint").innerHTML = "Hint:  ";
     gameStart();
 }
 
@@ -118,18 +95,14 @@ function compareLetters(guessLetter) {
     console.log(blanksCorrect);
 }
 
-// // Create audio function for winning 
+// Create audio function for winning 
 
-// function cheering() {
-    
-// }
 
 // Create function for the scoreboard - checking/comparing wins against losses 
 function scoreboard() {
     if (wordLetters.toString() == blanksCorrect.toString()) {
         wins++;
         gameReset()
-        cheering()
         document.getElementById("trackwins").innerHTML = "  " + wins;
     }
     
@@ -153,3 +126,6 @@ document.onkeyup = function (event) {
     document.getElementById("lettersGuessed").innerHTML = "  " + wrongGuess.join("  ");
     console.log(guesses);
 }
+
+// Start Game
+gameStart()

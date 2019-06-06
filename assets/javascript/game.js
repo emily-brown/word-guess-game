@@ -118,13 +118,17 @@ function scoreboard() {
     console.log("wins:" + wins + " | losses:" + losses + "| Letters Guessed:" + remainingGuesses)
 }
 
+let alpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+
 // Create event to check and store player letter guess 
 document.onkeyup = function (event) {
     let guesses = String.fromCharCode(event.keyCode).toLowerCase();
+    if (alpha.indexOf(guesses) >-1) {
     compareLetters(guesses);
     scoreboard();
     document.getElementById("lettersGuessed").innerHTML = "  " + wrongGuess.join("  ");
     console.log(guesses);
+    }
 }
 
 // Start Game

@@ -1,5 +1,7 @@
 # word-guess-game
 
+### Link to Live Game: https://emily-brown.github.io/word-guess-game/
+
 ## Game Objective:
 Guess the correct word to gain points.
 

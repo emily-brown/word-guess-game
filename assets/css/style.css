@@ -19,12 +19,15 @@
 }
 
 #scoreboard {
-    background-color: white;
+    background-color: #78dcb8;
     opacity: 0.5;
     font-family: 'Ribeye', cursive;
     width: 50%;
+    border: 2px solid white;
 }
 
 a {
-    color: lightgreen;
+    /* color: #0094ab; */
+    color: #80ba00;
+    font-family: 'Ribeye', cursive;
 }

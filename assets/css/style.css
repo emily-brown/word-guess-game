@@ -19,7 +19,12 @@
 }
 
 #scoreboard {
-    background-color: aquamarine;
+    background-color: white;
     opacity: 0.5;
     font-family: 'Ribeye', cursive;
+    width: 50%;
+}
+
+a {
+    color: lightgreen;
 }

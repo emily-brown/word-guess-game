@@ -17,6 +17,9 @@ let wrongGuess = [];
 let helpMe = document.getElementById("hint");
 let answer = document.getElementById("showHint");
 
+// Create hint bank
+let hintBank = ["Sea animal with 8 arms", "Mythical half human sea creature", "This creature's scientifc name is Hippocampus", "Mammals of the sea", "These creatures have an entire week dedicated to them"];
+
 // Create game start funtion 
 function gameStart() {
     
@@ -44,12 +47,8 @@ function gameStart() {
     console.log("wrongGuess");
 }
 
-// Create hint funtion 
-
+// Create hint function
 helpMe.addEventListener("click", function(){
-
-    // Create hint bank
-    let hintBank = ["Sea animal with 8 arms", "Mythical half human sea creature", "This creature's scientifc name is Hippocampus", "Mammals of the sea", "These creatures have an entire week dedicated to them"];
 
     // Match the correct hint with the corresponding random word
     showHint.innerHTML = "Hint: " + hintBank[wordBank.indexOf(randomWord)];
@@ -58,7 +57,7 @@ helpMe.addEventListener("click", function(){
 });
 
 
-// Create Game Reset Function
+// Create Game Reset Function - resettting guesses back to 10, refresh letters guess, refresh blanks and refresh hint to match with newly generated word
 function gameReset() {
     remainingGuesses = 10;
     wrongGuess = [];
@@ -95,34 +94,33 @@ function compareLetters(guessLetter) {
     console.log(blanksCorrect);
 }
 
-// Create audio function for winning 
-
-
 // Create function for the scoreboard - checking/comparing wins against losses 
 function scoreboard() {
+    // Letters guessed are correct (found in the word) - player wins point
     if (wordLetters.toString() == blanksCorrect.toString()) {
         wins++;
         gameReset()
         document.getElementById("trackwins").innerHTML = "  " + wins;
     }
-    
+    // Player ran out of guesses and did not guess word correct - player gets a point against them
     else if (remainingGuesses === 0) {
         losses++;
         gameReset()
         document.getElementById("tracklosses").innerHTML = "  " + losses;
     }
-
     document.getElementById("wordGuess").innerHTML = "  " + blanksCorrect.join("  ");
     document.getElementById("guesses").innerHTML = "  " + remainingGuesses;
 
     console.log("wins:" + wins + " | losses:" + losses + "| Letters Guessed:" + remainingGuesses)
 }
 
+// Create alphabet array 
 let alpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
-// Create event to check and store player letter guess 
+// Create event function to check and store player letter guess 
 document.onkeyup = function (event) {
     let guesses = String.fromCharCode(event.keyCode).toLowerCase();
+    // allow guesses to only count if a letter is pressed from keyboard, nothing else
     if (alpha.indexOf(guesses) >-1) {
     compareLetters(guesses);
     scoreboard();
@@ -131,5 +129,5 @@ document.onkeyup = function (event) {
     }
 }
 
-// Start Game
+// Execute Game
 gameStart()

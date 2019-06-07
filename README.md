@@ -46,7 +46,7 @@ Functionality:
   - If the player guesses the word correctly within their 10 guesses, they win a point and the point is captured in the "Wins" section fo the scorboard.
   - If the player runs out of all 10 guesses, they lose a point and is captured in the "Losses" section of the scoreboard.
 ```
-<img width="976" src="assets/scores.png">
+<img width="976" src="assets/images/scores.png">
 
 ##### Either win or lose 
 ```

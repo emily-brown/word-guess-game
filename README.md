@@ -53,6 +53,6 @@ Functionality:
   - Once either a win or lose point is captured, the game resets to choose new word from word bank, hint is cleared and guesses remaining is refreshed.
   - Game will continue to circulate through the words as long as player likes. 
 ```
-  
+<img width="976" src="assets/images/blankwscores.png">
 
 

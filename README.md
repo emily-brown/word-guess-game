@@ -30,18 +30,24 @@ Functionality:
   - Player begins guessing by hitting any letter to guess the word (only letters will be recongized as guesses).
   - If player gets stuck, they can click the "Help!" button in the corner of main game frame and a corresponding word hint will appear.
 ```
+<img width="976" src="assets/images/mainFrame.png">
+
 ##### Guessed Container 
 ```
 Functionality:
   - Any wrong letters guessed will be captured in the "Wrong Guess" section and "Number of Guesses Left" will decrease.
   - Player has 10 guesses. 
 ```
+<img width="976" src="assets/images/guessing.png">
+
 ##### Scoreboard Container 
 ```
 Functionality:
   - If the player guesses the word correctly within their 10 guesses, they win a point and the point is captured in the "Wins" section fo the scorboard.
   - If the player runs out of all 10 guesses, they lose a point and is captured in the "Losses" section of the scoreboard.
 ```
+<img width="976" src="assets/scores.png">
+
 ##### Either win or lose 
 ```
   - Once either a win or lose point is captured, the game resets to choose new word from word bank, hint is cleared and guesses remaining is refreshed.

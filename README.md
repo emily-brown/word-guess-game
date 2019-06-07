@@ -10,3 +10,9 @@ Guess the correct word to gain points.
 4. If you guess the correct letter within the 10 guesses you have, you earn a point. If you guess incorrectly all 10 guesses, you lose a point. 
   #### Tips:
   If you get stuck, hit the "Help!" button and a hint will appear. 
+  
+## Tools/Languages Used:
+-- HTML/CSS
+-- Javascript
+-- Bootstrap
+-- Google Fonts 

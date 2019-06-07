@@ -12,7 +12,10 @@ Guess the correct word to gain points.
   If you get stuck, hit the "Help!" button and a hint will appear. 
   
 ## Tools/Languages Used:
+```
 -- HTML/CSS
 -- Javascript
 -- Bootstrap
 -- Google Fonts 
+
+```

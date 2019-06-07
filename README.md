@@ -24,21 +24,27 @@ Guess the correct word to gain points.
 ##### Main Game Container
 ```
 Functionality:
-  - Randomly generated word from the word bank will be chosen and appear as blanks on the screen for the player to guess
-  - Player begins guessing by hitting any letter to guess the word (only letters will be recongized as guesses)
-  - If player gets stuck, they can click the "Help!" button in the corner of main game frame and a corresponding word hint will appear
+  - Randomly generated word from the word bank will be chosen and appear as blanks on the screen for the player to guess.
+  - Player begins guessing by hitting any letter to guess the word (only letters will be recongized as guesses).
+  - If player gets stuck, they can click the "Help!" button in the corner of main game frame and a corresponding word hint will appear.
 ```
 ##### Guessed Container 
 ```
 Functionality:
-  - Any wrong letters guessed will be captured in the "Wrong Guess" section and "Number of Guesses Left" will decrease
-  - Player has 10 guesses 
+  - Any wrong letters guessed will be captured in the "Wrong Guess" section and "Number of Guesses Left" will decrease.
+  - Player has 10 guesses. 
 ```
 ##### Scoreboard Container 
 ```
 Functionality:
-  - If the player guesses the word correctly within their 10 guesses, they win a point and the point is captured in the "Wins" section fo the scorboard
-  - If the player runs out of all 10 guesses, they lose a point and is captured in the "Losses" section of the scoreboard 
+  - If the player guesses the word correctly within their 10 guesses, they win a point and the point is captured in the "Wins" section fo the scorboard.
+  - If the player runs out of all 10 guesses, they lose a point and is captured in the "Losses" section of the scoreboard.
 ```
+##### Either win or lose 
+```
+  - Once either a win or lose point is captured, the game resets to choose new word from word bank, hint is cleared and guesses remaining is refreshed.
+  - Game will continue to circulate through the words as long as player likes. 
+```
+  
 
 
